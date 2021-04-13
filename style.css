@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    direction: rtl;
+}
+
+img {
+    width: 100%;
+    height: 170px;
+    transition: 0.5s all;
+}
+
+#havetoremovespan {
+    display: none;
+    pointer-events: none;
+}
+
+.prodcut-area {
+    background-color: #f1fafe;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 80px 40px 80px;
+    flex-wrap: wrap;
+}
+
+.prodcut-area .product-item {
+    width: 320px;
+    height: 350px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 30px 0px;
+}
+
+.prodcut-area .product-item .image-area {
+    position: relative;
+    overflow: hidden;
+    background-image: url(logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.prodcut-area .product-item .image-area img {
+    transition: 0.5s all;
+}
+
+.prodcut-area .product-item .image-area img.speceffect {
+    transform: scale(0);
+}
+
+.prodcut-area .product-item .image-area .change-image-btn {
+    height: 50px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border-radius: 50%;
+    background-color: white;
+    font-size: 20px;
+    z-index: 99999;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s opacity;
+    border: 1px solid #eee;
+    pointer-events: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-area .change-image-btn svg {
+    width: 30px;
+    height: 48px;
+}
+
+.prodcut-area .product-item:hover .image-area .change-image-btn {
+    opacity: 1 !important;
+    pointer-events: all;
+}
+
+.prodcut-area .product-item .image-area::before {
+    content: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient( 180deg, rgba(36, 50, 56, .4), transparent);
+    z-index: 1;
+}
+
+.prodcut-area .product-item .image-area:hover::before {
+    content: "" !important;
+}
+
+.prodcut-area .product-item .desc-area {
+    padding: 15px 20px 20px 20px;
+    text-align: right;
+    color: #243238;
+}
+
+.product-item .desc-area .title {
+    font-size: 20px;
+}
+
+.product-item .desc-area .info {
+    display: flex;
+    padding: 20px 20px 10px 0px;
+    justify-content: space-between;
+}
+
+.product-item .desc-area .info span {
+    position: relative !important;
+}
+
+.product-item .desc-area .info span::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    right: -20px;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: -4px;
+}
+
+.product-item .desc-area .info .price::before {
+    background-image: url(price.svg);
+}
+
+.product-item .desc-area .info .feature-1::before {
+    background-image: url(internet.svg);
+}
+
+.product-item .desc-area .info .feature-2::before {
+    background-image: url(computer.svg);
+}
+
+.prodcut-area .product-item .options-area {
+    display: flex;
+    justify-content: space-around;
+}
+
+.prodcut-area .product-item .options-area a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.prodcut-area .product-item .options-area .contact-us {
+    background: linear-gradient( 180deg, #90a4ae, #78909c);
+    color: white;
+}
+
+.prodcut-area .product-item .options-area .contact-us:hover {
+    background: linear-gradient( 180deg, #78909c, #546e7a);
+}
+
+.prodcut-area .product-item .options-area .show-demo {
+    background: linear-gradient( 180deg, #42a5f5, #2196f3);
+    color: white;
+}
+
+.prodcut-area .product-item .options-area .show-demo:hover {
+    background: linear-gradient( 180deg, #2196f3, #1976d2);
+}
+
+@media screen and (max-width:600px) {
+    .prodcut-area {
+        padding: 0;
+    }
+}
